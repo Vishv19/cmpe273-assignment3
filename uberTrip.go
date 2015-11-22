@@ -238,12 +238,12 @@ func calculateDistanceAndPrice(startPoint int , result [][]int) (int, float64, i
             intermediatePrice, intermediateDistance, intermediateDuration, _ := getPriceAndDistance(paths[j],paths[j+1])
             price = price + intermediatePrice
             distance = distance +intermediateDistance
-            duration = price + intermediateDuration
+            duration = duration + intermediateDuration
         }
         roundTripPrice, roundTripDistance, roundTripDuration, _ := getPriceAndDistance(paths[len(paths)-1], startPoint)
-        price = price + roundTripDuration
+        price = price + roundTripPrice
         distance = distance + roundTripDistance
-        duration = duration + roundTripPrice
+        duration = duration + roundTripDuration
         tripdatalist[i].price = price
         tripdatalist[i].distance = distance
         tripdatalist[i].duration = duration
@@ -255,11 +255,11 @@ func calculateDistanceAndPrice(startPoint int , result [][]int) (int, float64, i
             minPrice = price
         }
     }
-    minDistance :=  tripdatalist[index].distance
+    minDuration :=  tripdatalist[index].duration
     for i := 0; i < len(tripdatalist); i++ {
         if(i!= index) {
             if(tripdatalist[i].price == minPrice) {
-                if(tripdatalist[i].distance < minDistance) {
+                if(tripdatalist[i].duration < minDuration) {
                     index = i
                     break
                 }
