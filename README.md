@@ -1,9 +1,10 @@
-*To use Trip end points*
+##**To use Trip end points**
+
 Assuming that you have created locations as mentioned in the below guidelines and noted down it's id
 
-go run uberTrip.go
+**go run uberTrip.go**
 
-Sample POST request:
+#**Sample POST request:**
 http://localhost:8080/trips/
 
 Body
@@ -30,7 +31,7 @@ POST Response
   "total_uber_duration": 2044
 }
 
-Sample GET Request:
+#**Sample GET Request:**
 
 http://localhost:8080/trips/1234
 
@@ -50,7 +51,9 @@ GET Response
   "total_uber_duration": 2044
 }
 
-PUT Request: http://localhost:8080/trips/1234/request
+#**PUT Request:**
+
+http://localhost:8080/trips/1234/request
 
 Response 1:
 
@@ -144,11 +147,11 @@ Response 5:
 
 After Response 4, any other request to PUT will end up as "status:finished" in response json. So if you want to check the sequence once again, rerun the server and query for PUT again.
 
-*To use Locations end points:*
+##**To use Locations end points:**
 
-go run locationRest.go
+**go run locationRest.go**
 
-Sample POST request:
+#**Sample POST request:**
 
 http://localhost:8080/locations/
 
@@ -183,7 +186,7 @@ POST Response:
   }
 }
 
-Sample GET Request:
+#**Sample GET Request:**
 
 http://localhost:8080/locations/98081
 
@@ -202,7 +205,7 @@ GET Response
   }
 }
 
-Sample PUT Request:
+#**Sample PUT Request:**
 
 http://localhost:8080/locations/98081
 
@@ -233,6 +236,6 @@ PUT Response:
   }
 }
 
-Sample Delete Request:
+#**Sample Delete Request:**
 
 http://localhost:8080/locations/98081
